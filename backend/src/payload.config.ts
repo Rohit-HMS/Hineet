@@ -42,6 +42,8 @@ export default buildConfig({
     'http://127.0.0.1:3000',
     'http://localhost:3001',
     'http://127.0.0.1:3001',
+    'https://hineet-nqse.vercel.app',
+    'https://hineet-nqse-git-main-rohit-hms-s-projects.vercel.app',
   ],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
