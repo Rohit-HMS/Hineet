@@ -2,6 +2,8 @@ import { fetchProducts } from "@/lib/api";
 import { Metadata } from "next";
 import ProductDetailClient from "./ProductDetailClient";
 
+export const dynamic = 'force-dynamic';
+
 export async function generateStaticParams() {
   const products = await fetchProducts();
   return products.map((product) => ({
