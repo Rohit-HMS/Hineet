@@ -5,7 +5,7 @@ const API_URL = `${process.env.NEXT_PUBLIC_PAYLOAD_URL || 'http://localhost:4000
 
 export async function fetchJobs(): Promise<Job[]> {
   try {
-    const res = await fetch(`${API_URL}/jobs?limit=100`, {
+    const res = await fetch(`${API_URL}/jobs?limit=100&t=${Date.now()}`, {
       cache: 'no-store', // Always fetch fresh data for jobs to ensure admin panel changes reflect immediately
     });
     if (!res.ok) throw new Error('Failed to fetch jobs');
@@ -20,7 +20,7 @@ export async function fetchJobs(): Promise<Job[]> {
 
 export async function fetchProducts(): Promise<Product[]> {
   try {
-    const res = await fetch(`${API_URL}/products?limit=100`, {
+    const res = await fetch(`${API_URL}/products?limit=100&t=${Date.now()}`, {
       cache: 'no-store', // Always fetch fresh data for products
     });
     if (!res.ok) throw new Error('Failed to fetch products');
@@ -83,7 +83,7 @@ export interface HeroLogosData {
 
 export async function fetchHeroLogos(): Promise<HeroLogosData | null> {
   try {
-    const res = await fetch(`${API_URL}/globals/hero-logos`, {
+    const res = await fetch(`${API_URL}/globals/hero-logos?t=${Date.now()}`, {
       cache: 'no-store',
     });
     if (!res.ok) throw new Error('Failed to fetch hero logos');
@@ -105,7 +105,7 @@ export interface HomeHeroData {
 
 export async function fetchHomeHero(): Promise<HomeHeroData | null> {
   try {
-    const res = await fetch(`${API_URL}/globals/home-hero`, {
+    const res = await fetch(`${API_URL}/globals/home-hero?t=${Date.now()}`, {
       cache: 'no-store',
     });
     if (!res.ok) throw new Error('Failed to fetch home hero');
@@ -128,7 +128,7 @@ export interface StatsBarData {
 
 export async function fetchStatsBar(): Promise<StatsBarData | null> {
   try {
-    const res = await fetch(`${API_URL}/globals/stats-bar`, {
+    const res = await fetch(`${API_URL}/globals/stats-bar?t=${Date.now()}`, {
       cache: 'no-store',
     });
     if (!res.ok) throw new Error('Failed to fetch stats bar');
@@ -154,7 +154,7 @@ export interface ExpertiseData {
 
 export async function fetchExpertise(): Promise<ExpertiseData | null> {
   try {
-    const res = await fetch(`${API_URL}/globals/expertise?depth=1`, {
+    const res = await fetch(`${API_URL}/globals/expertise?depth=1&t=${Date.now()}`, {
       cache: 'no-store',
     });
     if (!res.ok) throw new Error('Failed to fetch expertise');
@@ -180,7 +180,7 @@ export interface AboutSectionData {
 
 export async function fetchAboutSection(): Promise<AboutSectionData | null> {
   try {
-    const res = await fetch(`${API_URL}/globals/about-section`, {
+    const res = await fetch(`${API_URL}/globals/about-section?t=${Date.now()}`, {
       cache: 'no-store',
     });
     if (!res.ok) throw new Error('Failed to fetch about section');
