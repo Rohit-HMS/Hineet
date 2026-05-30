@@ -1,6 +1,7 @@
 import { Job } from '@/data/jobs';
 import { Product } from '@/data/products';
 
+// Trigger fresh build with saved environment variables
 const API_URL = `${process.env.NEXT_PUBLIC_PAYLOAD_URL || 'http://localhost:4000'}/api`;
 
 export async function fetchJobs(): Promise<Job[]> {
