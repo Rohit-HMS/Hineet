@@ -1,0 +1,14 @@
+#!/usr/bin/expect -f
+set timeout -1
+spawn npx -y create-payload-app@latest backend -t blank --use-npm --no-agent
+expect {
+    "Select a database" {
+        send "\r"
+        exp_continue
+    }
+    "Enter MongoDB connection string" {
+        send "\r"
+        exp_continue
+    }
+    eof
+}
