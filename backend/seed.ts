@@ -2,6 +2,7 @@ import { getPayload } from 'payload'
 import configPromise from './src/payload.config'
 import { products } from './products_data'
 import { jobs } from './jobs_data'
+import 'dotenv/config'
 
 async function seed() {
   const payload = await getPayload({ config: configPromise })

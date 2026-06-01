@@ -1,4 +1,5 @@
 import type { CollectionConfig } from 'payload'
+import { getFrontendUrl } from '../utils/getFrontendUrl'
 
 export const Products: CollectionConfig = {
   slug: 'products',
@@ -7,9 +8,9 @@ export const Products: CollectionConfig = {
     livePreview: {
       url: (doc) => {
         if (doc?.slug) {
-          return `http://localhost:3000/products/${doc.slug}`;
+          return `${getFrontendUrl()}/products/${doc.slug}`;
         }
-        return 'http://localhost:3000/products';
+        return `${getFrontendUrl()}/products`;
       }
     },
   },

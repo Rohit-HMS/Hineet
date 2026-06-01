@@ -1,11 +1,12 @@
 import type { CollectionConfig } from 'payload'
+import { getFrontendUrl } from '../utils/getFrontendUrl'
 
 export const Jobs: CollectionConfig = {
   slug: 'jobs',
   admin: {
     useAsTitle: 'title',
     livePreview: {
-      url: () => 'http://localhost:3000/careers',
+      url: () => `${getFrontendUrl()}/careers`,
     },
   },
   access: {

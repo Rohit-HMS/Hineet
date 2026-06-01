@@ -44,6 +44,8 @@ export default buildConfig({
     'http://127.0.0.1:3001',
     'https://hineet-nqse.vercel.app',
     'https://hineet-nqse-git-main-rohit-hms-s-projects.vercel.app',
+    ...(process.env.NEXT_PUBLIC_SITE_URL ? [process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, '')] : []),
+    ...(process.env.SITE_URL ? [process.env.SITE_URL.replace(/\/$/, '')] : []),
   ],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',

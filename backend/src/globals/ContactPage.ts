@@ -1,10 +1,11 @@
 import type { GlobalConfig } from 'payload'
+import { getFrontendUrl } from '../utils/getFrontendUrl'
 
 export const ContactPage: GlobalConfig = {
   slug: 'contact-page',
   admin: {
     livePreview: {
-      url: () => 'http://localhost:3000/contact',
+      url: () => `${getFrontendUrl()}/contact`,
     },
   },
   access: {

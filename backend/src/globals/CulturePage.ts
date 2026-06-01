@@ -1,10 +1,11 @@
 import type { GlobalConfig } from 'payload'
+import { getFrontendUrl } from '../utils/getFrontendUrl'
 
 export const CulturePage: GlobalConfig = {
   slug: 'culture-page',
   admin: {
     livePreview: {
-      url: () => 'http://localhost:3000/culture',
+      url: () => `${getFrontendUrl()}/culture`,
     },
   },
   access: {
